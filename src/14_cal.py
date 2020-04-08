@@ -46,14 +46,23 @@ elif len(sys.argv) == 2:
       print(calendar.month(datetime.now().year, month))
     else:
       print("Please provide a number from 1 to 12 for the calendar month you'd like to see")
-  # if the argument provided isn't a number or outside of that range, throw an error
+  # if the argument provided isn't a number, throw an error
   else:
     print("Please provide a valid number for the calendar month you'd like to see")
 
 # if user provides two arguments, display provided month and provided year
 elif len(sys.argv) == 3:
-  print("No date arguments provided")
-  # if the incorrect format has been provided, display the desired argument format for the user e.g. 14_cal.py [month] [year]
+  # check if argument is a number
+  if sys.argv[1].isnumeric() and sys.argv[2].isnumeric():
+    # typecast the arguments from a string to an int
+    month = int(sys.argv[1])
+    year = int(sys.argv[2])
+    # check if the month is in the range of 1 to 12
+    if month > 0 and month < 13:
+      print(calendar.month(year, month))
+    else:
+      print("Please provide a number from 1 to 12 for the calendar month you'd like to see")
 
-else:
-  print("Please provide proper argument input. When invoking this file, the format should look like 14_cal.py [month] [year] or just 14_cal.py for a calendar of the current month and year")
+  # if the argument provided isn't a number, throw an error
+  else:
+    print("Please provide proper argument input. When invoking this file, the format should look like 14_cal.py [month] [year] or just 14_cal.py for a calendar of the current month and year")
