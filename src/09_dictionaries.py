@@ -50,6 +50,9 @@ print(waypoints[0])
 
 # Write a loop that prints out all the field values for all the waypoints
 # YOUR CODE HERE
+# for obj in waypoints:
+#     for key in obj:
+#         print(obj[key])
+
 for obj in waypoints:
-    for key in obj:
-        print(obj[key])
+    print(obj["lat"], obj["lon"], obj["name"])
