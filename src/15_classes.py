@@ -16,8 +16,8 @@ class Waypoint(LatLon):
     self.name = name
     super().__init__(lat, lon)
 
-  def __repr__(self):
-    return "Waypoint('{}', '{}', '{}')".format(self.name, self.lat, self.lon)
+  # def __repr__(self):
+  #   return "Waypoint('{}', '{}', '{}')".format(self.name, self.lat, self.lon)
 
   def __str__(self):
     return 'Name: {}, Latitude: {}, Longitude: {}'.format(self.name, self.lat, self.lon)
@@ -32,8 +32,8 @@ class Geocache(Waypoint):
     self.size = size
     super().__init__(name, lat, lon)
 
-  def __repr__(self):
-    return "Geocache('{}', '{}', '{}', '{}', '{}')".format(self.name, self.difficulty, self.size, self.lat, self.lon)
+  # def __repr__(self):
+  #   return "Geocache('{}', '{}', '{}', '{}', '{}')".format(self.name, self.difficulty, self.size, self.lat, self.lon)
 
   def __str__(self):
     return 'Name: {}, Difficulty: {}, Size: {}, Latitude: {}, Longitude: {}'.format(self.name, self.difficulty, self.size, self.lat, self.lon)
